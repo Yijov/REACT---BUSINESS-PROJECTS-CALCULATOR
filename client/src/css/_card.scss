@@ -1,0 +1,32 @@
+.card {
+  width: 12rem;
+  height: 16rem;
+  margin: 2rem;
+  overflow: hidden;
+  background: $WhiteText;
+  display: flex;
+  color: $Light;
+  border: 4px solid $Light;
+  border-radius: 20px;
+  font-size: 1.5rem;
+  flex-direction: column;
+  background-size: cover;
+  text-align: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: ease-in-out;
+  transition-duration: 0.2s;
+  &:hover {
+    transform: scale(1.1);
+    color: $WhiteText;
+    border: 4px solid $WhiteText;
+  }
+}
+
+.cardSection {
+  position: relative;
+  top: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
