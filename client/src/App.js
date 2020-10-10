@@ -4,14 +4,16 @@ import "./css/App.css";
 //Pages and Components
 import Header from "./components/Header";
 import Nav from "./components/Nav";
-import Dashboard from "./pages/Dashboard";
+import Project from "./pages/Project";
+// import Dashboard from "./pages/Dashboard";
 
 function App() {
   return (
     <div className="App">
       <Header />
       <Nav />
-      <Dashboard />
+      <Project />
+      {/* <Dashboard /> */}
     </div>
   );
 }

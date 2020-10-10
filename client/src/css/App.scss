@@ -1,8 +1,9 @@
 //imports
 @import "variables";
 @import "header";
-@import "card";
+@import "dashboard";
 @import "navBar";
+@import "project";
 
 // Body resets
 * {
@@ -28,7 +29,7 @@
   position: absolute;
   height: 100%;
   top: 2rem;
-  left: 0;
+  left: 3.6rem;
   right: 0;
   text-decoration: none;
   // background: $softBackgound;
@@ -41,7 +42,6 @@
 }
 .sectionName {
   height: 2rem;
-  margin-left: 3rem;
   font-size: 1.2rem;
   color: $WhiteText;
   background: $SecundaryColor;
