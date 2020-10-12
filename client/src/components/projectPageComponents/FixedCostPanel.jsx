@@ -1,16 +1,13 @@
 import React from "react";
 
+import Donut from "./charts/Donut";
+
 export default function FixedCostPanel() {
   return (
     <div className="dataBox fixedCostPanel">
       <h2>FIXED COST</h2>
-      <br />
-      <p>Payroll: {}</p>
-      <br />
-      <p>Expenses: {}</p>
-      <br />
-      <p>Monthly Total: {}</p>
-      <br />
+      <Donut />
+      Total: {26000}
     </div>
   );
 }

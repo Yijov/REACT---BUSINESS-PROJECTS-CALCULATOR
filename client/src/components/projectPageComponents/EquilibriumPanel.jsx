@@ -1,12 +1,12 @@
 import React from "react";
 
-export default function EquilibriumPanel() {
+export default function EquilibriumPanel({ yearlyEq, monthlyEq }) {
   return (
     <div className="dataBox equilibriumPanel">
       <p>EQUILIBRIUM</p>
-      <br />
-      <p>Monthly Eq</p>
-      <p>Yearly Eq</p>
+
+      <p>Monthly Eq: {monthlyEq}</p>
+      <p>Yearly Eq: {yearlyEq}</p>
     </div>
   );
 }

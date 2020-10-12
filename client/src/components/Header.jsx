@@ -3,7 +3,7 @@ export default function Header() {
   return (
     <header className="header">
       <div className="logo">
-        <div className="logo-icon">LOGO</div>
+        <div className="logo-icon">[LOGO]</div>
         <h1 className="logo-name">APP NAME</h1>
       </div>
       <div className="configIcons">
