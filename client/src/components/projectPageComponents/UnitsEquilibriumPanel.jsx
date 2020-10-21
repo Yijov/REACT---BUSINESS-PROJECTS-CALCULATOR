@@ -1,14 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
+import { CurrentProjectContext } from "../../context/CurrentProjectContext";
 
 export default function UnitsEquilibriumPanel() {
+  const { currentProjecBody } = useContext(CurrentProjectContext);
+
+  const { equilibrium } = currentProjecBody;
+
   return (
     <div className="dataBox unitsEquilibriumPanel">
-      <h2>EQUILIBRIUM BY PRODUCT</h2>
+      <h2>MONTHLY EQUILIBRIUM BY PRODUCT</h2>
       <br />
       <table>
         <thead>
           <tr>
-            <th>Products</th>
+            <th>Product</th>
             <th>Cost</th>
             <th>Price</th>
             <th>Brute Margin</th>
@@ -19,18 +24,44 @@ export default function UnitsEquilibriumPanel() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Something</td>
-            <td>1500</td>
-            <td>4000</td>
-            <td>2500</td>
-            <td>30%</td>
-            <td>100%</td>
-            <td>2000</td>
-            <td>150</td>
-          </tr>
+          {equilibrium &&
+            equilibrium.unitEquilibrium.map((product) => (
+              <ProductEqulibriumRow
+                productObject={product}
+                key={product.product}
+              />
+            ))}
         </tbody>
       </table>
+      <br />
+      {equilibrium && (
+        <p> Total units to sale: {equilibrium.EquilibriumInUnits.toFixed(1)}</p>
+      )}
     </div>
+  );
+}
+
+function ProductEqulibriumRow({ productObject }) {
+  const {
+    product,
+    price,
+    Equ,
+    eqAmount,
+    participation,
+    bMPercent,
+    bMargen,
+    cost,
+  } = productObject;
+  return (
+    <tr>
+      <td>{product}</td>
+      <td>${cost.toFixed(2)}</td>
+      <td>${price.toFixed(2)}</td>
+      <td>${bMargen.toFixed(2)}</td>
+      <td>{bMPercent.toFixed(2)}%</td>
+      <td>{participation.toFixed(2)}%</td>
+      <td>${Equ.toFixed(2)}</td>
+      <td>${eqAmount.toFixed(2)}</td>
+    </tr>
   );
 }

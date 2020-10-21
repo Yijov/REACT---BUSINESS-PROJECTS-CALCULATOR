@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
+import { CurrentProjectContext } from "../../context/CurrentProjectContext";
 
-export default function EquilibriumPanel({ yearlyEq, monthlyEq }) {
+export default function EquilibriumPanel() {
+  const { currentProjecBody } = useContext(CurrentProjectContext);
+
+  const { equilibrium } = currentProjecBody;
   return (
     <div className="dataBox equilibriumPanel">
       <p>EQUILIBRIUM</p>
-
-      <p>Monthly Eq: {monthlyEq}</p>
-      <p>Yearly Eq: {yearlyEq}</p>
+      <br />
+      {equilibrium && <p>Monthly: ${equilibrium.eqAmount.toFixed(2)}</p>}
+      {equilibrium && <p>Yearly: ${equilibrium.yearlyEqAmount.toFixed(2)}</p>}
     </div>
   );
 }

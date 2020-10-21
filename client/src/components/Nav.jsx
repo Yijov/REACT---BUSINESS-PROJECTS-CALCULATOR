@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function nav() {
   return (
@@ -6,47 +7,57 @@ export default function nav() {
       <nav className="main-menu">
         <ul>
           <li>
-            <i className="fa fa-home fa-2x"></i>
-            <span className="nav-text">Dashboard</span>
+            <Link to="/">
+              <i className="fa fa-home fa-2x"></i>
+              <span className="nav-text">Dashboard</span>
+            </Link>
           </li>
           <li>
-            <i className="fa fa-bar-chart-o fa-2x"></i>
-            <span className="nav-text">New Project (On Dev)</span>
+            <Link to="/planer">
+              <i className="fa fa-bar-chart-o fa-2x"></i>
+              <span className="nav-text">New Project</span>
+            </Link>
           </li>
 
           <li className="has-subnav">
-            <i className="fa fa-folder-open fa-2x"></i>
-            <span className="nav-text">Open Project</span>
+            <Link to="/project">
+              <i className="fa fa-folder-open fa-2x"></i>
+              <span className="nav-text">Open Project</span>
+            </Link>
           </li>
           <li>
-            <i className="fa fa-table fa-2x"></i>
-            <span className="nav-text">Generate Budget</span>
+            <Link to="/">
+              <i className="fa fa-table fa-2x"></i>
+              <span className="nav-text">Generate Budget</span>
+            </Link>
           </li>
 
           <li className="has-subnav">
-            <i className="fa fa-list fa-2x"></i>
-            <span className="nav-text">My projects list (On Dev)</span>
-          </li>
-
-          <li className="has-subnav">
-            <i className="fa fa-cogs fa-3x"></i>
-            <span className="nav-text">Settings (On Dev)</span>
-          </li>
-
-          <li>
-            <i className="fa fa-info fa-2x"></i>
-            <span className="nav-text">Instructions (On Dev)</span>
-          </li>
-          <li>
-            <i className="fa fa-font fa-2x"></i>
-            <span className="nav-text">About (On Dev)</span>
+            <Link to="/">
+              <i className="fa fa-list fa-2x"></i>
+              <span className="nav-text">My projects list (On Dev)</span>
+            </Link>
           </li>
         </ul>
 
-        <ul className="logout" id="close-Btn">
+        <ul className="logout">
           <li>
-            <i className="fa fa-power-off fa-2x"></i>
-            <span className="nav-text">Cerrar</span>
+            <Link to="/about">
+              <i className="fa fa-font fa-2x"></i>
+              <span className="nav-text">About</span>
+            </Link>
+          </li>
+          <li>
+            <Link to="/instructions">
+              <i className="fa fa-info fa-2x"></i>
+              <span className="nav-text">Instructions</span>
+            </Link>
+          </li>
+          <li className="has-subnav">
+            <Link to="/settings">
+              <i className="fa fa-cogs fa-3x"></i>
+              <span className="nav-text">Settings (On Dev)</span>
+            </Link>
           </li>
         </ul>
       </nav>

@@ -15,6 +15,11 @@
           align-items: center;
 }
 
+.header a:-webkit-any-link {
+  text-decoration: none;
+  color: white;
+}
+
 .header .logo {
   margin: 1rem;
   display: -webkit-box;
@@ -107,7 +112,8 @@ nav.main-menu.expanded {
   width: 250px;
 }
 
-.main-menu li {
+.main-menu li,
+a:-webkit-any-link {
   position: relative;
   display: table;
   border-collapse: collapse;
@@ -123,6 +129,11 @@ nav.main-menu.expanded {
   transition: all 0.1s linear;
   -webkit-transition-duration: 0.2s;
           transition-duration: 0.2s;
+}
+
+.main-menu li:hover,
+a:-webkit-any-link:hover {
+  color: #fff;
 }
 
 .main-menu .nav-icon {
@@ -319,6 +330,276 @@ nav.main-menu li.active,
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: start;
+}
+
+/* simple - enter transition 300ms, exit 150ms */
+.fade-appear,
+.fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
+
+.fade-appear-active,
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  -webkit-transition: opacity 450ms linear 250ms;
+  transition: opacity 450ms linear 250ms;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit.fade-exit-active {
+  opacity: 0;
+  -webkit-transition: opacity 150ms linear;
+  transition: opacity 150ms linear;
+}
+
+#planerPopUp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 20rem;
+  height: 20.5rem;
+  padding: 1.5rem;
+  position: absolute;
+  z-index: 3;
+  top: 20%;
+  left: 35%;
+  color: white;
+  background: #5fa2db;
+  border-radius: 15px;
+  -webkit-box-shadow: 3px 5px 16px lightgray;
+          box-shadow: 3px 5px 16px lightgray;
+}
+
+#planerPopUp h2 {
+  text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.6);
+}
+
+#planerPopUp form {
+  padding: 1rem;
+  margin-top: 0.5rem;
+  border-radius: 15px;
+}
+
+#planerPopUp form button {
+  background: #b3c6ff;
+  color: white;
+  width: 100%;
+  font-weight: 500;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0.8rem;
+  margin-top: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.6);
+}
+
+#planerPopUp form input,
+#planerPopUp form select,
+#planerPopUp form label {
+  display: block;
+  width: 90%;
+  padding: 0.8rem;
+  font-weight: 300;
+  border-radius: 8px;
+}
+
+.listContainer {
+  background: #e6ecff;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 91%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.listContainer .actionButtons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  font-size: 1.1rem;
+  bottom: 0.2rem;
+  height: 4.5rem;
+  width: 100%;
+}
+
+.listContainer .actionButtons button {
+  margin: 1rem;
+}
+
+.listContainer h2 {
+  font-size: 1.3rem;
+}
+
+.listContainer table {
+  /* cellspacing */
+  table-layout: fixed;
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+.listContainer table th {
+  font-weight: 300;
+  padding: 0.2rem;
+  color: white;
+  background-color: #5fa2db;
+}
+
+.listContainer table tr {
+  border: 3px solid #f2f2f2;
+}
+
+.listContainer table tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+.listContainer table td {
+  /* cellpadding */
+  width: auto;
+  padding: 0;
+  font-weight: 400;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.listContainer form {
+  padding: 0.5rem;
+  border-radius: 15px;
+  background: #5fa2db;
+  color: white;
+}
+
+.listContainer form button {
+  background: #b3c6ff;
+  color: white;
+  width: 100%;
+  font-weight: 350;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0.8rem;
+  margin-top: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.6);
+}
+
+.listContainer form input,
+.listContainer form select,
+.listContainer form label {
+  display: block;
+  margin: auto;
+  padding: 0.5rem;
+  border-radius: 8px;
+}
+
+.listContainer form input {
+  font-size: 1rem;
+}
+
+.listContainer button {
+  background: #5fa2db;
+  color: white;
+  width: 100%;
+  font-weight: 500;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0.8rem;
+  border-radius: 8px;
+  cursor: pointer;
+  text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.6);
+}
+
+.FormList {
+  margin: 1rem;
+  padding: 0.5rem;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 100%;
+  background: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #5fa2db;
+  border-radius: 5px;
+  -webkit-box-shadow: 1px 3px 8px lightgray;
+          box-shadow: 1px 3px 8px lightgray;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-transition: ease-in-out;
+  transition: ease-in-out;
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+  font-weight: 520;
+  position: relative;
+}
+
+.FormList input,
+.FormList select,
+.FormList label {
+  display: block;
+  width: 90%;
+  padding: 0.4rem;
+  font-weight: 300;
+  border-radius: 8px;
+}
+
+.fader-appear,
+.fader-enter {
+  opacity: 0;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+.fader-appear-active,
+.fader-enter.fader-enter-active {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: opacity 300ms, -webkit-transform 300ms;
+  transition: opacity 300ms, -webkit-transform 300ms;
+  transition: opacity 300ms, transform 300ms;
+  transition: opacity 300ms, transform 300ms, -webkit-transform 300ms;
+}
+
+.fader-exit {
+  opacity: 1;
+}
+
+.fader-exit.fader-exit-active {
+  opacity: 0;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  -webkit-transition: opacity 300ms, -webkit-transform 300ms;
+  transition: opacity 300ms, -webkit-transform 300ms;
+  transition: opacity 300ms, transform 300ms;
+  transition: opacity 300ms, transform 300ms, -webkit-transform 300ms;
 }
 
 * {

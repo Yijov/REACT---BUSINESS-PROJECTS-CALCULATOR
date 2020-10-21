@@ -48,7 +48,8 @@ nav.main-menu.expanded {
   width: 250px;
 }
 
-.main-menu li {
+.main-menu li,
+a:-webkit-any-link {
   position: relative;
   display: table;
   border-collapse: collapse;
@@ -61,6 +62,9 @@ nav.main-menu.expanded {
   transition: all 0.1s linear;
   transition: all 0.1s linear;
   transition-duration: 0.2s;
+  &:hover {
+    color: #fff;
+  }
 }
 
 .main-menu .nav-icon {

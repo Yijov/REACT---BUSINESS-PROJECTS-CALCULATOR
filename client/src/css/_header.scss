@@ -5,10 +5,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  & a:-webkit-any-link {
+    text-decoration: none;
+    color: white;
+  }
 
   & .logo {
     margin: 1rem;
     display: flex;
+
     &-icon {
       margin-left: 0.5rem;
     }

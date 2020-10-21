@@ -1,28 +1,34 @@
 import React from "react";
 import Chart from "react-apexcharts";
 
-export default function StackedBar() {
+export default function StackedBar({
+  sales,
+  fixedExpenses,
+  salesCost,
+  totalTax,
+  netIncome,
+}) {
   const state = {
     series: [
       {
         name: "Sales",
-        data: [190000, 0],
+        data: [sales, 0],
       },
       {
         name: "Taxes",
-        data: [0, 12000],
+        data: [0, totalTax],
       },
       {
         name: "Fixed Cost",
-        data: [0, 50000],
+        data: [0, fixedExpenses],
       },
       {
         name: "Sales Cost",
-        data: [0, 80000],
+        data: [0, salesCost],
       },
       {
         name: "Net Income",
-        data: [0, 0, 80000],
+        data: [0, 0, netIncome],
       },
     ],
     options: {
@@ -36,7 +42,7 @@ export default function StackedBar() {
         },
       },
       stroke: {
-        width: 1,
+        width: 3,
         colors: ["#fff"],
       },
 
