@@ -19,8 +19,8 @@ export default function ActionButtons() {
       <Link to="/planer">
         <i title="Edit Project" className="fa fa-table "></i>
       </Link>
-      <Link to="/budget">
-        <i title="Go to Budget" className="fa fa-list"></i>
+      <Link to="/project">
+        <i title="Back to Project Preview" className="fa fa-bar-chart-o"></i>
       </Link>
       <Link to="/">
         <i

@@ -11,9 +11,9 @@ export default function Header() {
         </div>
       </Link>
       <div className="configIcons">
-        <span>G</span>
-        <span>D</span>
-        <span>A</span>
+        <span>Y</span>
+        <span>J</span>
+        <span>V</span>
       </div>
     </header>
   );

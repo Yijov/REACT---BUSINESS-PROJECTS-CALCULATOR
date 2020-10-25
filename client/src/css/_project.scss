@@ -1,3 +1,16 @@
+.actionbuttons2 {
+  position: absolute;
+  display: flex;
+  right: 0.5rem;
+  & .fa {
+    color: lightgray;
+    transition: color 200ms linear;
+    &:hover {
+      color: $WhiteText;
+    }
+  }
+}
+
 .dataBox {
   margin: 0.5rem;
   padding: 0.5rem;

@@ -45,6 +45,20 @@
   }
 }
 
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+// .projectNameInput {
+//   width: fit-content;
+//   margin-left: 0.5rem;
+//   color: $WhiteText;
+//   background: $SecundaryColor;
+//   cursor: pointer;
+// }
+
 //Modal panels containing the froms o add items to the project
 
 .listContainer {

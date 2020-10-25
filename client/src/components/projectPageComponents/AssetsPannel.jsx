@@ -3,6 +3,7 @@ import { CurrentProjectContext } from "../../context/CurrentProjectContext";
 import MultyCircle from "./charts/MultyCircle";
 export default function AssetsPannel() {
   const { currentProjecBody } = useContext(CurrentProjectContext);
+
   const { assets } = currentProjecBody;
   return (
     <div className="dataBox assetsPanel">

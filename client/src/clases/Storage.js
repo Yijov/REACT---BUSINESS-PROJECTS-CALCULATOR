@@ -49,6 +49,32 @@ export default class Storage {
     });
   }
 
+  static loadProject(nameOfTheProjectToLoad) {
+    //open an archived project
+    const projectToLoad = Storage.getProjecs().filter(
+      (project) => project.projectName === nameOfTheProjectToLoad
+    )[0];
+
+    localStorage.setItem(
+      "currentProjectProducts",
+      JSON.stringify(projectToLoad.products.products)
+    );
+    localStorage.setItem(
+      "currentProjectExpenses",
+      JSON.stringify(projectToLoad.expenses.items)
+    );
+    localStorage.setItem(
+      "currentProjectPayroll",
+      JSON.stringify(projectToLoad.payroll.payroll)
+    );
+    localStorage.setItem(
+      "currentProjectAssets",
+      JSON.stringify(projectToLoad.assets.items)
+    );
+    localStorage.setItem("CurrentProjectName", projectToLoad.projectName);
+    localStorage.setItem("CurrentProjectIndustry", projectToLoad.industry);
+  }
+
   static newProject() {
     let emptyArr = [];
     localStorage.setItem("currentProjectProducts", JSON.stringify(emptyArr));

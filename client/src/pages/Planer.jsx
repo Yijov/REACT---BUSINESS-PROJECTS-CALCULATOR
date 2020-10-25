@@ -16,7 +16,9 @@ export default function Planer() {
 
   return (
     <div className="page">
-      <h2 className="sectionName">PLANER</h2>
+      <h2 className="sectionName">
+        NOW PLANING: {currentProjectName.toUpperCase()}
+      </h2>
 
       {!projectNameIsDefined && (
         <PopUp setProjectNameIsDefined={setProjectNameIsDefined} />

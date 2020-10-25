@@ -7,16 +7,22 @@ import YearlyFlowPanel from "../components/projectPageComponents/MonthlyFlowPane
 import FixedCostPanel from "../components/projectPageComponents/FixedCostPanel";
 import AssetsPannel from "../components/projectPageComponents/AssetsPannel";
 import UnitsEquilibriumPanel from "../components/projectPageComponents/UnitsEquilibriumPanel";
+import ActionButtons from "../components/projectPageComponents/ActionButtons";
 
 export default function Project() {
-  const { updateState } = useContext(CurrentProjectContext);
+  const { updateState, currentProjectName } = useContext(CurrentProjectContext);
+
   useEffect(() => {
     updateState();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <div className="page">
-      <h2 className="sectionName">PROJECT {} OVERVIEW</h2>
+      <h2 className="sectionName">
+        {currentProjectName.toUpperCase()} - PROJECT OVERVIEW
+        <ActionButtons />
+      </h2>
+
       <div className="projectPanels">
         <div className="metrics">
           <RoiPanel />

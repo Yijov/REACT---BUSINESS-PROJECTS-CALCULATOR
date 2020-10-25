@@ -13,6 +13,12 @@ export function CurrentProjectContextProvider(props) {
   const [currentProjecBody, setCurrentProjecBody] = useState([]);
 
   function updateState() {
+    setCurrentProjecBody(
+      Storage.getProjecs().filter(
+        (proj) =>
+          proj.projectName === localStorage.getItem("CurrentProjectName")
+      )[0]
+    );
     setCurrentProjectProducts(
       JSON.parse(localStorage.getItem("currentProjectProducts"))
     );
@@ -29,12 +35,6 @@ export function CurrentProjectContextProvider(props) {
 
     setCurrentProjectName(localStorage.getItem("CurrentProjectName"));
     setCurrentProjectIndustry(localStorage.getItem("CurrentProjectIndustry"));
-    setCurrentProjecBody(
-      Storage.getProjecs().filter(
-        (proj) =>
-          proj.projectName === localStorage.getItem("CurrentProjectName")
-      )[0]
-    );
   }
   function resetLocalStorage() {
     Storage.newProject();

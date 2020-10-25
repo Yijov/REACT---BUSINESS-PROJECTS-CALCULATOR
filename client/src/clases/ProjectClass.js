@@ -14,7 +14,7 @@ export default class Project {
   ) {
     this.projectName = projectName; //string
     this.industry = industry; //string
-    this.contingencyPercent = 0.08;
+    this.contingencyPercent = 0.08; // percent of contigency t add to the budget
     this.products = products; //object array
     this.payroll = payroll; //object array
     this.expenses = expenses; //object array
