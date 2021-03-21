@@ -21,12 +21,14 @@ export default function FormsModal(props) {
 
   return (
     <div>
-      <button onClick={Toggle} onBlur={Toggle}>
-        {burttonText}
-      </button>
+      <button onClick={Toggle}>{burttonText}</button>
 
       <CSSTransition in={visible} timeout={1000} classNames="fader">
-        <div style={ContainerStyle}>
+        <div
+          onFocus={console.log("focus")}
+          onBlur={console.log("focusOut")}
+          style={ContainerStyle}
+        >
           {" "}
           {React.cloneElement(props.children, { Toggle: Toggle })}{" "}
         </div>
