@@ -48,10 +48,14 @@
     & .roiPanel {
       grid-row: 1/2;
       grid-column: 1/2;
+      display: flex;
+      text-align: center;
     }
     & .equilibriumPanel {
       grid-column: 2/4;
       grid-row: 1/2;
+      display: flex;
+      text-align: center;
     }
     & .yearlyFlowPanel {
       grid-row: 4/5;
