@@ -21,7 +21,9 @@ export default function FormsModal(props) {
 
   return (
     <div>
-      <button onClick={Toggle}>{burttonText}</button>
+      <button onClick={Toggle} onBlur={Toggle}>
+        {burttonText}
+      </button>
 
       <CSSTransition in={visible} timeout={1000} classNames="fader">
         <div style={ContainerStyle}>
