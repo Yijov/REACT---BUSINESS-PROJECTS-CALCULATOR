@@ -8,6 +8,7 @@ export default function RoiPanel() {
   return (
     <div className="dataBox roiPanel">
       <h2>ROI TIME</h2>
+      <br />
       {roi && <p>{currentProjecBody.roi.roiTime}</p>}
     </div>
   );

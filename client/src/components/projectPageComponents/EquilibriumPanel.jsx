@@ -8,6 +8,7 @@ export default function EquilibriumPanel() {
   return (
     <div className="dataBox equilibriumPanel">
       <p>EQUILIBRIUM</p>
+      <br />
 
       {equilibrium && <p>Monthly: ${equilibrium.eqAmount.toFixed(2)}</p>}
       {equilibrium && <p>Yearly: ${equilibrium.yearlyEqAmount.toFixed(2)}</p>}

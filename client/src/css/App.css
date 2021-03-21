@@ -735,16 +735,16 @@ select:focus {
   text-align: justify;
 }
 
-img {
+.snipets img {
   width: 390px;
   margin-top: 0.3rem;
 }
 
-p {
+.snipets p {
   width: 24.5rem;
 }
 
-.snipet {
+.snipets .snipet {
   width: 35%;
 }
 
