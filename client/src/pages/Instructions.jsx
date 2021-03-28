@@ -37,6 +37,8 @@ export default function Instructions() {
             src={require("../images/PlanerPage.png")}
             alt="Select project name PopUp"
           />
+        </div>
+        <div className="snipet">
           <p>
             To start creating your project simply input the list of parameters
             by adding (1 and 2) your products, assets, etc. and press some of

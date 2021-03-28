@@ -727,25 +727,28 @@ select:focus {
 }
 
 .snipets {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin: 1rem;
+  height: 90%;
+  width: 100%;
   margin-top: 0rem;
-  text-align: justify;
-}
-
-.snipets img {
-  width: 390px;
-  margin-top: 0.3rem;
-}
-
-.snipets p {
-  width: 24.5rem;
+  overflow: auto;
 }
 
 .snipets .snipet {
-  width: 35%;
+  margin: auto;
+  max-width: 500px;
+}
+
+.snipets .snipet p {
+  margin: auto;
+  max-width: 95%;
+  min-width: 80%;
+  margin-bottom: 1rem;
+}
+
+.snipets .snipet img {
+  max-width: 100%;
+  min-width: 95%;
+  margin-bottom: 1rem;
 }
 
 .information {
@@ -761,6 +764,26 @@ select:focus {
 .information p {
   color: #0039e6;
   width: 100%;
+}
+
+#notFound {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  justify-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 5rem;
+  padding: 3rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background: #0039e6;
+  color: #fff;
+  margin: auto;
+  margin-top: 10%;
+  height: 40vh;
+  width: 50vw;
 }
 
 * {

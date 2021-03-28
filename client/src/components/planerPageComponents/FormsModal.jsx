@@ -26,10 +26,12 @@ export default function FormsModal(props) {
       <CSSTransition in={visible} timeout={1000} classNames="fader">
         <div style={ContainerStyle}>
           {" "}
-          {React.cloneElement(props.children, { Toggle: Toggle })}{" "}
+          {React.cloneElement(props.children, {
+            Toggle: Toggle,
+          })}{" "}
         </div>
       </CSSTransition>
     </div>
   );
 }
-//the current element is to render all the forms. It Uses ReactClone to pass down the Toggle Functio to the chilldren so the form closes when submmited
+//the previous element is to render all the forms. It Uses ReactClone to pass down the Toggle Functio to the chilldren so the form closes when submmited
