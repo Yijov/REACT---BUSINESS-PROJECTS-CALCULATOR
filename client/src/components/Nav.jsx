@@ -1,9 +1,19 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
-import { CurrentProjectContext } from "../context/CurrentProjectContext";
+import { Link, withRouter } from "react-router-dom";
 
-export default function Nav() {
+import { CurrentProjectContext } from "../context/CurrentProjectContext";
+import { AuthenticationContext } from "../context/AuthenticationContext";
+
+function Nav(props) {
+  const { setUser, setPasword, setAuth } = useContext(AuthenticationContext);
   const { updateState, resetLocalStorage } = useContext(CurrentProjectContext);
+
+  const handleLogout = () => {
+    setUser("");
+    setPasword("");
+    setAuth(false);
+    props.history.push("/login");
+  };
   const handleNewProject = () => {
     resetLocalStorage();
     updateState();
@@ -53,15 +63,14 @@ export default function Nav() {
           </li> */}
         </ul>
 
-        <ul className="logout">
+        <ul className="logout" onClick={handleLogout}>
           <li className="has-subnav">
-            <Link to="/settings">
-              <i className="fa fa-cogs fa-3x"></i>
-              <span className="nav-text">Settings (On Dev)</span>
-            </Link>
+            <i className="fa fa-sign-out fa-3x"></i>
+            <span className="nav-text">Settings (On Dev)</span>
           </li>
         </ul>
       </nav>
     </div>
   );
 }
+export default withRouter(Nav);

@@ -21,7 +21,7 @@ export default function LogIn(props) {
   return (
     <div className="page">
       <div id={"planerPopUp"}>
-        <h2>Please Log-in to Continue</h2>
+        <h2>PLEASE SIGN IN</h2>
 
         <form className={"fade"} onSubmit={handleeLogIn}>
           <label htmlFor="project-name">User</label>

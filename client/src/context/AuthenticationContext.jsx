@@ -18,7 +18,15 @@ export function AuthenticationContextProvider(props) {
   return (
     <div>
       <AuthenticationContext.Provider
-        value={{ setUser, usser, setPasword, pasword, handleAuth, auth }}
+        value={{
+          setUser,
+          usser,
+          setPasword,
+          pasword,
+          handleAuth,
+          auth,
+          setAuth,
+        }}
       >
         {props.children}
       </AuthenticationContext.Provider>

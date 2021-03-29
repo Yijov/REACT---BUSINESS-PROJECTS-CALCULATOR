@@ -786,6 +786,11 @@ select:focus {
   width: 50vw;
 }
 
+#errorMessage {
+  color: red;
+  margin-top: 0.6rem;
+}
+
 * {
   margin: 0;
   padding: 0;
